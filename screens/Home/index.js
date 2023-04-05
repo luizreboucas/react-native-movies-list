@@ -9,6 +9,7 @@ import Card from '../../components/Card';
 export default function Home({navigation}) {
   const [movies, setMovies] = useState([])
   const image_path = 'https://image.tmdb.org/t/p/w500'
+  
 
   useEffect(()=>{
     const getMovies = async() => {
@@ -32,9 +33,10 @@ export default function Home({navigation}) {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={{flex: 1}}>
+      <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Welcome To The Most Popular Movies</Text>
+        <Text style={styles.headerTitle}>This Week Popular Movies</Text>
       </View>
       
         <FlatList
@@ -55,6 +57,8 @@ export default function Home({navigation}) {
           
         />
       <StatusBar style="auto" />
+      </View>
+      
     </SafeAreaView>
   );
 }
@@ -71,7 +75,9 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'center',
-    marginBottom: 30
+    marginBottom: 30,
+    marginTop: 30,
+    width: windowWidth / 1.1 + 4
   },
   card: {
     
