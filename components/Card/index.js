@@ -3,7 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
 export default function Card ({styles,item,image_path,navigation}){
     const Stack = createNativeStackNavigator()
-    console.log(item)
+    
     return(
         <Pressable 
                 style={styles.card}
@@ -13,7 +13,7 @@ export default function Card ({styles,item,image_path,navigation}){
                     overview: item.overview
                 })}
                 >
-                <Image style={styles.poster} source={{uri: `${image_path}${item.poster_path}`}}/>
+                <Image  style={styles.poster} source={{uri: `${image_path}${item.poster_path}`}}/>
                 <Text style={styles.title}>{item.original_title}</Text> 
               </Pressable>
     )
